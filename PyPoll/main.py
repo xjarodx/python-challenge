@@ -15,19 +15,38 @@ with open(election_data, newline="") as csvfile:
     row_count = len(data)
     
     #gets count of votes each canidate recieved
-    canidate = []
-    for row in data:
-        name = row[2]
-        canidate.append(name)
-    canidate_count = Counter(canidate)
-    print (canidate_count)
-    
-    Khan = []
-    for row in data:
-        where row[2] == "Khan" is True
-        Khan.append()
+    #canidate = []
+    #for row in data:
+    #    name = row[2]
+    #    canidate.append(name)
+    #canidate_count = Counter(canidate)
+    #print (canidate_count)
 
-    print (Khan)
+    canidates = {}
+    for row in data:
+        if not row[2] in canidates:
+            canidates[row[2]] = 0
+        if row[2] == "Khan":
+            canidates["Khan"]+=1
+        elif row[2] == "Correy":
+            canidates["Correy"]+=1
+        elif row[2] == "Li":
+            canidates["Li"]+=1
+        else row[2] == "O'Tooley":
+            canidates["O'Tooley"]+=1
+
+    
+    
+    #print(canidates["Khan"])
+    print (canidates)
+
+
+    #Khan = []
+   # for row in data:
+    #    where row[2] == "Khan" is True
+     #   Khan.append()
+
+    #print (Khan)
     
 print ("Election Results")
 print ("-------------------------------")
