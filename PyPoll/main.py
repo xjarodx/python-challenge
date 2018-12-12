@@ -23,22 +23,32 @@ with open(election_data, newline="") as csvfile:
     #print (canidate_count)
 
     canidates = {}
+    
+    canidates["Khan"]=0
+    canidates["Correy"]=0
+    canidates["Li"]=0
+    canidates["O'Tooley"]=0
+    
     for row in data:
-        if not row[2] in canidates:
-            canidates[row[2]] = 0
+        
         if row[2] == "Khan":
             canidates["Khan"]+=1
         elif row[2] == "Correy":
             canidates["Correy"]+=1
         elif row[2] == "Li":
             canidates["Li"]+=1
-        else row[2] == "O'Tooley":
+        elif row[2] == "O'Tooley":
             canidates["O'Tooley"]+=1
+
+
+    Khan_percent = canidates["Khan"] / row_count
+
+    print ("{:.2f%}".format(Khan_percent * 100))
 
     
     
     #print(canidates["Khan"])
-    print (canidates)
+    #print (canidates)
 
 
     #Khan = []
